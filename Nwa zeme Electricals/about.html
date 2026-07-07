@@ -1,0 +1,1230 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Nwa Zeme Electricals</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        /* ============================================
+           ABOUT PAGE SPECIFIC STYLES
+           ============================================ */
+
+        .about-hero {
+            padding: 140px 60px 80px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            background-image: url('image/salutation.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 47, 0.7);
+            z-index: 1;
+        }
+
+        .about-hero * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .about-hero h1 span {
+            color: var(--blue);
+        }
+
+        .about-hero p {
+            font-size: 20px;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .about-text h2 span {
+            color: var(--blue);
+        }
+
+        .about-text .tagline {
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-text .location-info {
+            background: #e3f2fd;
+            padding: 15px 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--blue);
+            margin: 15px 0;
+        }
+
+        .about-text .location-info strong {
+            color: var(--blue);
+        }
+
+        .about-text .mission-values {
+            display: flex;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .about-text .mission-values div {
+            flex: 1;
+            padding: 15px 20px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid var(--blue);
+        }
+
+        .about-text .mission-values h4 {
+            color: var(--navy);
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .about-text .mission-values p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .stats-section {
+            padding: 0 60px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid #eef2f7;
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 168, 232, 0.1);
+            border-color: var(--blue);
+        }
+
+        .stat-card .stat-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .stat-card .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .stat-card .stat-number span {
+            color: var(--blue);
+        }
+
+        .stat-card .stat-label {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .why-choose-section {
+            padding: 60px 60px 80px;
+            background: #f8fafc;
+        }
+
+        .why-choose-section .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .why-choose-section .section-title span {
+            color: var(--blue);
+        }
+
+        .why-choose-section .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: var(--white);
+            padding: 35px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f7;
+            transition: all 0.4s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 168, 232, 0.08);
+            border-color: var(--blue);
+        }
+
+        .why-card .why-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .why-card h4 {
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d2847 100%);
+            padding: 60px 40px;
+            text-align: center;
+            margin: 0 60px 60px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '⚡';
+            position: absolute;
+            font-size: 300px;
+            opacity: 0.05;
+            right: -50px;
+            bottom: -80px;
+            transform: rotate(-10deg);
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .cta-banner p {
+            color: var(--light-gray);
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-banner .cta-btn {
+            background: var(--blue);
+            color: var(--navy);
+            padding: 16px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-banner .cta-btn:hover {
+            background: #0084b3;
+            transform: translateY(-3px);
+            color: var(--white);
+            box-shadow: 0 8px 25px rgba(0, 168, 232, 0.4);
+        }
+
+        .fade-marquee {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .fade-item {
+            display: none;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 1px;
+            padding: 10px 0;
+            animation: fadeInOut 4s ease-in-out;
+        }
+
+        .fade-item.active {
+            display: block;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(10px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 47, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 550px;
+            width: 92%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 45px 40px 35px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: slideUp 0.4s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: var(--navy);
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header .icon-big {
+            font-size: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .modal-header h2 {
+            font-size: 28px;
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .modal-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e4e8;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+            color: var(--navy);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px rgba(0, 168, 232, 0.15);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238892B0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            cursor: pointer;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .modal-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn-modal-email,
+        .btn-modal-whatsapp {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-modal-email {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .btn-modal-email:hover {
+            background: #0d2847;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(10, 26, 47, 0.3);
+        }
+
+        .btn-modal-email:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn-modal-whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .btn-modal-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-modal-whatsapp:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .modal-success {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .modal-success.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .modal-success .checkmark {
+            font-size: 70px;
+            color: #25D366;
+            margin-bottom: 15px;
+        }
+
+        .modal-success h3 {
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .modal-success p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .modal-form-wrapper.hide {
+            display: none;
+        }
+
+        .modal::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 10px;
+        }
+
+        .modal::-webkit-scrollbar-thumb:hover {
+            background: #0084b3;
+        }
+
+        @media (max-width: 600px) {
+            .modal {
+                padding: 30px 20px 25px;
+                width: 95%;
+                border-radius: 16px;
+            }
+            .modal-header h2 {
+                font-size: 22px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 14px;
+                padding: 10px 14px;
+            }
+            .btn-modal-email,
+            .btn-modal-whatsapp {
+                font-size: 14px;
+                padding: 12px 16px;
+            }
+            .modal-header .icon-big {
+                font-size: 38px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            background: var(--navy);
+            color: #c5cae9;
+            text-align: center;
+        }
+
+        .footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer .footer-links a {
+            color: #c5cae9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer .footer-links a:hover {
+            color: var(--blue);
+        }
+
+        .footer .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer .footer-social a {
+            color: #c5cae9;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .footer .footer-social a:hover {
+            color: var(--white);
+            background: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-image img {
+                height: 300px;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero {
+                padding: 120px 20px 60px;
+                min-height: 300px;
+                background-attachment: scroll;
+            }
+            .about-hero h1 {
+                font-size: 32px;
+            }
+            .about-hero p {
+                font-size: 16px;
+            }
+            .about-content {
+                padding: 40px 20px;
+            }
+            .about-text h2 {
+                font-size: 28px;
+            }
+            .about-text .mission-values {
+                flex-direction: column;
+            }
+            .stats-section {
+                padding: 0 20px 40px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            .stat-card .stat-number {
+                font-size: 28px;
+            }
+            .why-choose-section {
+                padding: 40px 20px 60px;
+            }
+            .why-choose-section .section-title {
+                font-size: 28px;
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .cta-banner {
+                margin: 0 20px 40px;
+                padding: 40px 20px;
+            }
+            .cta-banner h2 {
+                font-size: 24px;
+            }
+            .cta-banner p {
+                font-size: 16px;
+            }
+            .cta-banner .cta-btn {
+                padding: 14px 30px;
+                font-size: 15px;
+            }
+            .fade-item {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero h1 {
+                font-size: 26px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .stat-card {
+                padding: 20px 15px;
+            }
+            .stat-card .stat-number {
+                font-size: 24px;
+            }
+            .stat-card .stat-label {
+                font-size: 13px;
+            }
+            .fade-item {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    NAVIGATION
+    ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <img src="image/nwa zeme Logo.png" alt="Nwa Zeme Electricals Logo" />
+            <span class="company-name">Nwa Zeme Electricals</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html" class="quote-nav-btn">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+    ABOUT HERO
+    ============================================ -->
+    <section class="about-hero">
+        <h1>About <span>Nwa Zeme</span> Electricals</h1>
+        <p>Delivering excellence in electrical solutions with safety, reliability, and professionalism.</p>
+    </section>
+
+    <!-- ============================================
+    ABOUT CONTENT
+    ============================================ -->
+    <section class="about-content">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="image/electrical1.jpeg" alt="Nwa Zeme Electricals Team at Work" />
+            </div>
+            <div class="about-text">
+                <span class="tagline">⚡ Who We Are</span>
+                <h2>Your Trusted <span>Electrical</span> Partner</h2>
+                <p>
+                    Nwa Zeme Electricals is a premier electrical services provider dedicated to delivering 
+                    safe, reliable, and professional electrical solutions. With years of experience in the 
+                    industry, we have built a reputation for excellence, integrity, and customer satisfaction.
+                </p>
+                <div class="location-info">
+                    <strong>📍 Based in Benoni, South Africa</strong> — We serve clients <strong>province-wide</strong>, 
+                    bringing quality electrical services to homes and businesses across South Africa.
+                </div>
+                <p>
+                    We understand that every project is unique, which is why we take a personalized approach 
+                    to understand your specific needs and provide tailored solutions that exceed expectations.
+                </p>
+                <div class="mission-values">
+                    <div>
+                        <h4>🎯 Our Mission</h4>
+                        <p>To provide exceptional electrical services that ensure safety, efficiency, and reliability for every client.</p>
+                    </div>
+                    <div>
+                        <h4>💎 Our Values</h4>
+                        <p>Integrity, professionalism, quality workmanship, and customer-centric service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    STATS SECTION
+    ============================================ -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-icon">⚡</span>
+                <div class="stat-number">50<span>+</span></div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">✅</span>
+                <div class="stat-number">100<span>%</span></div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">👷</span>
+                <div class="stat-number">5<span>+</span></div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon">⭐</span>
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Average Rating</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    WHY CHOOSE US
+    ============================================ -->
+    <section class="why-choose-section">
+        <h2 class="section-title">Why Choose <span>Us</span></h2>
+        <p class="section-subtitle">We go above and beyond to ensure your electrical needs are met with excellence.</p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <span class="why-icon">🔒</span>
+                <h4>Safe &amp; Reliable</h4>
+                <p>We adhere to the highest safety standards and use only quality materials for lasting results.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🏆</span>
+                <h4>Quality Workmanship</h4>
+                <p>Every project is completed with precision, attention to detail, and pride in our work.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">⏰</span>
+                <h4>On-Time Service</h4>
+                <p>We value your time and ensure all projects are completed within the agreed timeframe.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">💬</span>
+                <h4>Transparent Communication</h4>
+                <p>We keep you informed throughout the process with clear, honest, and open communication.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">💰</span>
+                <h4>Competitive Pricing</h4>
+                <p>We offer fair, transparent pricing with no hidden costs. Quality service at affordable rates.</p>
+            </div>
+            <div class="why-card">
+                <span class="why-icon">🛡️</span>
+                <h4>Fully Insured</h4>
+                <p>All our work is fully insured, giving you complete peace of mind and protection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA BANNER
+    ============================================ -->
+    <section class="cta-banner">
+        <h2>💬 Ready to Work With Us?</h2>
+        <p>Get a free, no-obligation quote for your electrical project today.</p>
+        <a href="contact.html" class="cta-btn">📞 Request a Free Quote</a>
+    </section>
+
+    <!-- ============================================
+    FLOATING MARQUEE
+    ============================================ -->
+    <section class="floating-section" style="border-top: none; border-bottom: none; background: var(--navy); padding: 30px 0;">
+        <div class="fade-marquee" id="fadeMarquee">
+            <span class="fade-item active">⚡ Electrical Installations</span>
+            <span class="fade-item">🔧 Wiring & Rewiring</span>
+            <span class="fade-item">💡 Lighting Solutions</span>
+            <span class="fade-item">🔌 Security Systems</span>
+            <span class="fade-item">📄 COC Certificates</span>
+            <span class="fade-item">☀️ Solar Power Systems</span>
+            <span class="fade-item">🚨 24/7 Emergency Services</span>
+        </div>
+    </section>
+
+    <!-- ============================================
+    QUOTE MODAL
+    ============================================ -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalCloseBtn">&times;</button>
+            <div class="modal-header">
+                <span class="icon-big">📋</span>
+                <h2>Request a Free Quote</h2>
+                <p>Fill in your details and we'll get back to you within 24 hours</p>
+            </div>
+
+            <div class="modal-form-wrapper" id="formWrapper">
+                <form id="quoteForm">
+                    <div class="form-group">
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" placeholder="e.g. John Doe" required />
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" id="emailAddress" placeholder="john@example.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phoneNumber" placeholder="+27 84 466 1577" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Service Required <span class="required">*</span></label>
+                        <select id="serviceType" required>
+                            <option value="">— Select a service —</option>
+                            <option value="Electrical Installations">⚡ Electrical Installations</option>
+                            <option value="Wiring & Rewiring">🔧 Wiring & Rewiring</option>
+                            <option value="Lighting Solutions">💡 Lighting Solutions</option>
+                            <option value="Security Systems">🔌 Security Systems</option>
+                            <option value="Maintenance & Repairs">🛠️ Maintenance & Repairs</option>
+                            <option value="Solar Power Systems">☀️ Solar Power Systems</option>
+                            <option value="Commercial & Residential">🏗️ Commercial & Residential</option>
+                            <option value="COC Certificate">📄 Certificate of Compliance (COC)</option>
+                            <option value="Emergency Services">🚨 24/7 Emergency Services</option>
+                            <option value="Other">📝 Other (please specify)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message <span class="required">*</span></label>
+                        <textarea id="messageText" placeholder="Tell us more about your project..." required></textarea>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" class="btn-modal-email" id="sendEmailBtn">Send via Email</button>
+                        <button type="button" class="btn-modal-whatsapp" id="sendWhatsAppBtn">Send via WhatsApp</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-success" id="successMessage">
+                <div class="checkmark">✅</div>
+                <h3>Thank You!</h3>
+                <p>Your enquiry has been sent successfully. We'll contact you within 24 hours.</p>
+                <br />
+                <button class="btn-modal-email" style="display:inline-block; width:auto; padding:10px 30px; background:var(--blue); color:var(--navy); border:none; border-radius:30px; font-weight:700; cursor:pointer;" id="closeSuccessBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="#">📘</a>
+            <a href="#">🐦</a>
+            <a href="#">📸</a>
+            <a href="#">💼</a>
+        </div>
+        <p>© 2026 Nwa Zeme Electricals. All rights reserved. 🇿🇦 Benoni, South Africa</p>
+        <p style="font-size: 13px; opacity: 0.7; margin-top: 5px;">Serving clients province-wide 📍</p>
+    </footer>
+
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script>
+        // NAVBAR SCROLL
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // FADING MARQUEE
+        const fadeItems = document.querySelectorAll('.fade-item');
+        let currentFadeIndex = 0;
+
+        function showNextFade() {
+            fadeItems.forEach(item => item.classList.remove('active'));
+            currentFadeIndex = (currentFadeIndex + 1) % fadeItems.length;
+            fadeItems[currentFadeIndex].classList.add('active');
+        }
+
+        setInterval(showNextFade, 4000);
+
+        // QUOTE MODAL
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const formWrapper = document.getElementById('formWrapper');
+        const successMessage = document.getElementById('successMessage');
+        const closeSuccessBtn = document.getElementById('closeSuccessBtn');
+
+        const fullName = document.getElementById('fullName');
+        const emailAddress = document.getElementById('emailAddress');
+        const phoneNumber = document.getElementById('phoneNumber');
+        const serviceType = document.getElementById('serviceType');
+        const messageText = document.getElementById('messageText');
+        const sendEmailBtn = document.getElementById('sendEmailBtn');
+        const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
+
+        modalCloseBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            resetForm();
+        }
+
+        function resetForm() {
+            formWrapper.classList.remove('hide');
+            successMessage.classList.remove('show');
+            document.getElementById('quoteForm').reset();
+        }
+
+        closeSuccessBtn.addEventListener('click', closeModal);
+
+        // VALIDATION
+        function validateForm() {
+            let isValid = true;
+            const fields = [
+                { el: fullName, name: 'Full Name' },
+                { el: emailAddress, name: 'Email Address' },
+                { el: phoneNumber, name: 'Phone Number' },
+                { el: serviceType, name: 'Service' },
+                { el: messageText, name: 'Message' }
+            ];
+
+            fields.forEach(field => {
+                if (!field.el.value.trim()) {
+                    field.el.style.borderColor = '#e74c3c';
+                    isValid = false;
+                } else {
+                    field.el.style.borderColor = '#e0e4e8';
+                }
+            });
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailAddress.value.trim() && !emailRegex.test(emailAddress.value.trim())) {
+                emailAddress.style.borderColor = '#e74c3c';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        document.querySelectorAll('#quoteForm input, #quoteForm select, #quoteForm textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.style.borderColor = '#e0e4e8';
+            });
+        });
+
+        // EMAIL - Formspree ID: xaqgkqlw
+        const FORMSPREE_ID = 'xaqgkqlw';
+
+        sendEmailBtn.addEventListener('click', async function() {
+            if (!validateForm()) {
+                alert('Please fill in all required fields correctly.');
+                return;
+            }
+
+            this.disabled = true;
+            this.textContent = 'Sending...';
+
+            const formData = {
+                name: fullName.value.trim(),
+                email: emailAddress.value.trim(),
+                phone: phoneNumber.value.trim(),
+                service: serviceType.value,
+                message: messageText.value.trim()
+            };
+
+            try {
+                const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    showSuccess();
+                } else {
+                    alert('Oops! Something went wrong. Please try again or contact us on WhatsApp.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection and try again.');
+            }
+
+            this.disabled = false;
+            this.textContent = 'Send via Email';
+        });
+
+        // WHATSAPP
+        const WHATSAPP_NUMBER = '0844661577';
+
+        sendWhatsAppBtn.addEventListener('click', function() {
+            if (!validateForm()) {
+                alert('Please fill in all required fields correctly.');
+                return;
+            }
+
+            const name = fullName.value.trim();
+            const email = emailAddress.value.trim();
+            const phone = phoneNumber.value.trim();
+            const service = serviceType.value;
+            const message = messageText.value.trim();
+
+            const whatsappMessage = 
+`Hello Nwa Zeme Electricals,
+
+I would like to request a quote for:
+
+Service: ${service}
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}
+
+Please get back to me.`;
+
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            let whatsappUrl;
+            if (isMobile) {
+                whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            } else {
+                whatsappUrl = `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodedMessage}`;
+            }
+
+            window.open(whatsappUrl, '_blank');
+            showSuccess();
+        });
+
+        function showSuccess() {
+            formWrapper.classList.add('hide');
+            successMessage.classList.add('show');
+        }
+
+        console.log("Nwa Zeme Electricals About page loaded!");
+        console.log("📍 Benoni, South Africa | Serving province-wide");
+        console.log("📧 Formspree ID: xaqgkqlw");
+    </script>
+
+</body>
+</html>
